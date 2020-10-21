@@ -19,11 +19,16 @@ spring:
         - id: Delivery
           uri: http://localhost:8083
           predicates:
-            - Path=/deliveries/** 
+            - Path=/deliveries/**,/installs/**
         - id: Information
           uri: http://localhost:8084
           predicates:
             - Path= /myOrders/**
+        - id: Schedule
+          uri: http://localhost:8085
+          predicates:
+            - Path= /schedules/**
+
       globalcors:
         corsConfigurations:
           '[/**]':
@@ -54,11 +59,15 @@ spring:
         - id: Delivery
           uri: http://Delivery:8080
           predicates:
-            - Path=/deliveries/** 
+            - Path=/deliveries/**,/installs/**
         - id: Information
           uri: http://Information:8080
           predicates:
             - Path= /myOrders/**
+        - id: Schedule
+          uri: http://Schedule:8080
+          predicates:
+            - Path= /schedules/**
       globalcors:
         corsConfigurations:
           '[/**]':
